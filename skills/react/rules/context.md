@@ -15,18 +15,26 @@ Consumers of a context update when its value changes; `memo` does not block upda
 **Prefer:**
 
 ```tsx
-const ThemeContext = createContext<'light' | 'dark'>('light');
+const ThemeContext = createContext<"light" | "dark">("light");
 const SelectionContext = createContext<string | null>(null);
 
-function Providers({ theme, selectedId, children }: {
-  theme: 'light' | 'dark'; selectedId: string | null; children: React.ReactNode;
+function Providers({
+  theme,
+  selectedId,
+  children,
+}: {
+  theme: "light" | "dark";
+  selectedId: string | null;
+  children: React.ReactNode;
 }) {
-  return <ThemeContext.Provider value={theme}>
-    <SelectionContext.Provider value={selectedId}>{children}</SelectionContext.Provider>
-  </ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={theme}>
+      <SelectionContext.Provider value={selectedId}>{children}</SelectionContext.Provider>
+    </ThemeContext.Provider>
+  );
 }
 ```
 
-Splitting contexts limits *context subscriptions*, not parent-driven renders; inspect both before refactoring. Follow the provider syntax supported by the installed React version.
+Splitting contexts limits _context subscriptions_, not parent-driven renders; inspect both before refactoring. Follow the provider syntax supported by the installed React version.
 
 [React: `useContext`](https://react.dev/reference/react/useContext) · [React: `memo`](https://react.dev/reference/react/memo)

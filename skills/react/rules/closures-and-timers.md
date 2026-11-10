@@ -8,7 +8,7 @@ A delayed handler sees old props/state, debounce never fires, or listeners use s
 
 ## Rule
 
-Every render creates its own snapshot of values. Keep dependency arrays honest; use functional state updates when next state depends on previous state. A debounced/throttled function needs a stable timer across relevant renders, but its callback must see the latest values when required. React 19.2+ has `useEffectEvent` for non-reactive logic *inside Effects*; it is not a general-purpose event handler or a shortcut for missing dependencies. For general timers, use a maintained utility or an encapsulated hook rather than hand-rolling a complicated throttle.
+Every render creates its own snapshot of values. Keep dependency arrays honest; use functional state updates when next state depends on previous state. A debounced/throttled function needs a stable timer across relevant renders, but its callback must see the latest values when required. React 19.2+ has `useEffectEvent` for non-reactive logic _inside Effects_; it is not a general-purpose event handler or a shortcut for missing dependencies. For general timers, use a maintained utility or an encapsulated hook rather than hand-rolling a complicated throttle.
 
 **Avoid:** creating `debounce(send, 300)` in render, then invoking it on every keystroke; each render starts with a fresh timer.
 
@@ -16,17 +16,19 @@ Every render creates its own snapshot of values. Keep dependency arrays honest; 
 
 ```tsx
 function SearchBox() {
-  const [query, setQuery] = useState('');
-  const [debounced, setDebounced] = useState('');
+  const [query, setQuery] = useState("");
+  const [debounced, setDebounced] = useState("");
   useEffect(() => {
     const id = setTimeout(() => setDebounced(query), 300);
     return () => clearTimeout(id);
   }, [query]);
   // A framework loader/query hook can consume `debounced` with its own race handling.
-  return <>
-    <input value={query} onChange={e => setQuery(e.target.value)} />
-    <span>Settled query: {debounced}</span>
-  </>;
+  return (
+    <>
+      <input value={query} onChange={(e) => setQuery(e.target.value)} />
+      <span>Settled query: {debounced}</span>
+    </>
+  );
 }
 ```
 

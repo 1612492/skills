@@ -1,0 +1,11 @@
+{
+  "name": "coding-agent-skills",
+  "private": true,
+  "scripts": {
+    "format": "oxfmt \"**/*.md\"",
+    "format:check": "oxfmt --check \"**/*.md\""
+  },
+  "devDependencies": {
+    "oxfmt": "0.72.0"
+  }
+}

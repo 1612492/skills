@@ -18,15 +18,15 @@ Place error boundaries around meaningful parts of the UI so one failed area need
 async function handleSave() {
   try {
     await saveDraft();
-    setMessage('Saved');
+    setMessage("Saved");
   } catch {
-    setMessage('Save failed. Please retry.');
+    setMessage("Save failed. Please retry.");
   }
 }
 
 <ErrorBoundary fallback={<WidgetFallback />}>
   <RiskyWidget />
-</ErrorBoundary>
+</ErrorBoundary>;
 ```
 
 Use the framework's boundary convention or an existing boundary package where present; plain React still needs a class-based boundary implementation or a library. Provide a retry/reset path, decide whether changing a key should reset the failed subtree, and test both render and asynchronous failures.

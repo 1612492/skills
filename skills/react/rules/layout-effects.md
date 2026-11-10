@@ -21,7 +21,12 @@ function MeasuredLabel() {
   useLayoutEffect(() => {
     setHeight(ref.current?.getBoundingClientRect().height ?? 0);
   }, []);
-  return <><span ref={ref}>Label</span><span>{height}px</span></>;
+  return (
+    <>
+      <span ref={ref}>Label</span>
+      <span>{height}px</span>
+    </>
+  );
 }
 ```
 

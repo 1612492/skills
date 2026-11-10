@@ -8,7 +8,7 @@ Profiling shows repeated costly work on a hot interaction, or a stable value/fun
 
 ## Rule
 
-First localize state and remove unnecessary Effects. `memo` can skip parent-driven renders with equal props but does not block the component's own state or context updates. `useMemo` caches a *pure calculation*; `useCallback` caches a *function identity*. Dependencies and props compare using `Object.is`, so newly allocated objects/functions break shallow comparisons. React Compiler, when enabled, often provides the equivalent caching automatically; check the project before adding manual memoization.
+First localize state and remove unnecessary Effects. `memo` can skip parent-driven renders with equal props but does not block the component's own state or context updates. `useMemo` caches a _pure calculation_; `useCallback` caches a _function identity_. Dependencies and props compare using `Object.is`, so newly allocated objects/functions break shallow comparisons. React Compiler, when enabled, often provides the equivalent caching automatically; check the project before adding manual memoization.
 
 **Avoid:** wrapping every handler in `useCallback` or every value in `useMemo` without a consumer that benefits.
 

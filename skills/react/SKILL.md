@@ -17,22 +17,22 @@ Apply the relevant rules below to the actual task, not all of them by default. F
 
 ## Rule index
 
-| Symptom or task | Read |
-| --- | --- |
-| Slow update; hook state triggers broad renders | [State locality and render boundaries](rules/state-locality.md) |
-| Stateful wrapper; expensive children | [Elements as props and children](rules/elements-as-props.md) |
-| Child UI needs data or configuration from a wrapper | [Render props and composition](rules/render-props.md) |
-| Repeated expensive renders/calculations | [Memoization with evidence](rules/memoization.md) |
-| Unexpected state reset/preservation; dynamic lists | [Identity and keys](rules/identity-and-keys.md) |
-| Reusable cross-cutting wrapper | [Higher-order components](rules/higher-order-components.md) |
-| Context changes update too much UI | [Context subscriptions](rules/context.md) |
-| DOM access or imperative API | [Refs and imperative handles](rules/refs.md) |
-| Stale callback; broken debounce/throttle | [Closures and timers](rules/closures-and-timers.md) |
-| Flicker or layout measurement | [Layout effects](rules/layout-effects.md) |
-| Overlays clipped or hidden behind content | [Portals and CSS](rules/portals.md) |
-| Slow loading due to network sequence | [Fetching and waterfalls](rules/fetching-waterfalls.md) |
-| Old network result overwrites new data | [Async races](rules/async-races.md) |
-| Render, event, or promise error | [Error boundaries](rules/error-boundaries.md) |
+| Symptom or task                                     | Read                                                            |
+| --------------------------------------------------- | --------------------------------------------------------------- |
+| Slow update; hook state triggers broad renders      | [State locality and render boundaries](rules/state-locality.md) |
+| Stateful wrapper; expensive children                | [Elements as props and children](rules/elements-as-props.md)    |
+| Child UI needs data or configuration from a wrapper | [Render props and composition](rules/render-props.md)           |
+| Repeated expensive renders/calculations             | [Memoization with evidence](rules/memoization.md)               |
+| Unexpected state reset/preservation; dynamic lists  | [Identity and keys](rules/identity-and-keys.md)                 |
+| Reusable cross-cutting wrapper                      | [Higher-order components](rules/higher-order-components.md)     |
+| Context changes update too much UI                  | [Context subscriptions](rules/context.md)                       |
+| DOM access or imperative API                        | [Refs and imperative handles](rules/refs.md)                    |
+| Stale callback; broken debounce/throttle            | [Closures and timers](rules/closures-and-timers.md)             |
+| Flicker or layout measurement                       | [Layout effects](rules/layout-effects.md)                       |
+| Overlays clipped or hidden behind content           | [Portals and CSS](rules/portals.md)                             |
+| Slow loading due to network sequence                | [Fetching and waterfalls](rules/fetching-waterfalls.md)         |
+| Old network result overwrites new data              | [Async races](rules/async-races.md)                             |
+| Render, event, or promise error                     | [Error boundaries](rules/error-boundaries.md)                   |
 
 ## Version and scope guardrails
 

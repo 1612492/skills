@@ -17,14 +17,21 @@ The component calling `useState` or a stateful custom hook is the component that
 ```tsx
 function HelpDialogButton() {
   const [open, setOpen] = useState(false);
-  return <>
-    <button onClick={() => setOpen(true)}>Help</button>
-    {open && <HelpDialog onClose={() => setOpen(false)} />}
-  </>;
+  return (
+    <>
+      <button onClick={() => setOpen(true)}>Help</button>
+      {open && <HelpDialog onClose={() => setOpen(false)} />}
+    </>
+  );
 }
 
 function Dashboard() {
-  return <><HelpDialogButton /><LargeChart /></>;
+  return (
+    <>
+      <HelpDialogButton />
+      <LargeChart />
+    </>
+  );
 }
 ```
 

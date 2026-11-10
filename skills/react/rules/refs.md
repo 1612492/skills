@@ -21,10 +21,12 @@ function SearchField({ ref }: { ref: React.Ref<HTMLInputElement> }) {
 
 function Toolbar() {
   const inputRef = useRef<HTMLInputElement>(null);
-  return <>
-    <SearchField ref={inputRef} />
-    <button onClick={() => inputRef.current?.focus()}>Focus search</button>
-  </>;
+  return (
+    <>
+      <SearchField ref={inputRef} />
+      <button onClick={() => inputRef.current?.focus()}>Focus search</button>
+    </>
+  );
 }
 ```
 

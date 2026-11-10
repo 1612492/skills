@@ -24,13 +24,21 @@ useEffect(() => {
 useEffect(() => {
   let ignore = false;
   const controller = new AbortController();
-  setStatus('loading');
+  setStatus("loading");
   fetchResults(term, { signal: controller.signal })
-    .then(data => { if (!ignore) { setResults(data); setStatus('success'); } })
+    .then((data) => {
+      if (!ignore) {
+        setResults(data);
+        setStatus("success");
+      }
+    })
     .catch(() => {
-      if (!ignore && !controller.signal.aborted) setStatus('error');
+      if (!ignore && !controller.signal.aborted) setStatus("error");
     });
-  return () => { ignore = true; controller.abort(); };
+  return () => {
+    ignore = true;
+    controller.abort();
+  };
 }, [term]);
 ```
 
